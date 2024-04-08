@@ -10,10 +10,4 @@ data = {
 auth_url = 'https://accounts.spotify.com/api/token'
 auth_response = requests.post(auth_url, data=data,timeout=25)
 access_token = auth_response.json().get('access_token')
-# import re
-
-# text = '''hello (how are you?) what worng with you (just you)'''
-
-# # استخدم re.sub() لحذف أي فراغ كبير في بداية السطر الثاني
-# print(re.sub(r'\([^)]*\)', '', text).strip('').split('\n')[0] + '\n' + re.sub(r'^\s+', '', re.sub(r'\([^)]*\)', '', text).strip('').split('\n')[1]))
 
