@@ -1,5 +1,5 @@
 import requests, os
-# Spotify API Keyes
+# Spotify API Keys
 client_id = os.environ['CLIENT_ID'] 
 client_secret = os.environ['CLIENT_SECERT'] 
 data = {
