@@ -1,7 +1,7 @@
 import requests, os
-
-client_id = os.environ['CLIENT_ID'] = '46ac7b073d684c3890e49ac2e42068d8'
-client_secret = os.environ['CLIENT_SECERT'] = 'c0d9010101824fedae55b4b2712ea00c'
+# Spotify API Keyes
+client_id = os.environ['CLIENT_ID'] 
+client_secret = os.environ['CLIENT_SECERT'] 
 data = {
     'grant_type': 'client_credentials',
     'client_id': client_id,
