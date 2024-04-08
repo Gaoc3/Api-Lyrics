@@ -1,5 +1,6 @@
 import requests, os
 # Spotify API Keys
+# You can get them from https://developer.spotify.com/dashboard
 client_id = os.environ['CLIENT_ID'] 
 client_secret = os.environ['CLIENT_SECERT'] 
 data = {
