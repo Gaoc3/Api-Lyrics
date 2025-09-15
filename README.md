@@ -44,7 +44,7 @@ GET http://localhost:8000/lyrics/GetLyrics?q=Shape of You&srt=true
 
 * `t` (required) → Track ID (a specific identifier for the song).
 * `a` (required) → Artist name (e.g., `Ed Sheeran`).
-* `d` (optional) → Duration of the song in milliseconds (e.g., `237000`).
+* `d` (optional) → Duration of the song in minutes (e.g., `04:32`).
 * `srt` (optional) → `true` or `false`
     * `true` → Returns lyrics with timestamps.
     * `false` → Returns plain lyric text.
