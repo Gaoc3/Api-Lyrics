@@ -85,11 +85,3 @@ GET http://localhost:8000/lyrics/GetLyrPrecisily?t=5z0tM4Jc9W00DqG7b1S8&a=Ed%20S
 ## Getting Started
 
 To use this API, send HTTP GET requests to the specified endpoints with the required parameters. The API will respond with JSON data containing the requested lyrics.
-
-## Contributions
-
-Feel free to contribute by opening issues or submitting pull requests.
-
-## License
-
-[Specify your license here, e.g., MIT License]
