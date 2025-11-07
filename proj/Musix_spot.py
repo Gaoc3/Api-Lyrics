@@ -1,9 +1,13 @@
-import sys
-from pathlib import Path
-parent_dir_name = str(Path(__file__).parent.joinpath('..'))
-sys.path.append(str(parent_dir_name))
-import tok , requests
-def get_info(title:str) -> list[str]:
+from __future__ import annotations
+
+from typing import List
+
+import requests
+
+from . import tok
+
+
+def get_info(title: str) -> List[str]:
     headers = {
         'accept': '*/*',
         'accept-language': 'en,en-US;q=0.9,ar;q=0.8,en-GB;q=0.7,ar-IQ;q=0.6,zh-CN;q=0.5,zh-MO;q=0.4,zh;q=0.3,ar-AE;q=0.2',
@@ -25,11 +29,11 @@ def get_info(title:str) -> list[str]:
         'include_external': 'audio',
     }
 
-    response = requests.get('https://api.spotify.com/v1/search', params=params, headers=headers)
-    duration = response.json()['tracks']['items'][0]['duration_ms']
-    name = response.json()['tracks']['items'][0]['name']
-    artists = response.json()['tracks']['items'][0]['album']['artists'][0]['name']
-    id_ = response.json()['tracks']['items'][0]['id']
-    return [name , artists , id_ ]
-
-print(get_info('شايف طيفك - siilawy'))
+    response = requests.get('https://api.spotify.com/v1/search', params=params, headers=headers, timeout=25)
+    response.raise_for_status()
+    payload = response.json()
+    item = payload['tracks']['items'][0]
+    name = item['name']
+    artists = item['album']['artists'][0]['name']
+    id_ = item['id']
+    return [name, artists, id_]
