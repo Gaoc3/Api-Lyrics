@@ -14,6 +14,9 @@ app = Flask(__name__)
 musix = Musix()
 AUTHOR_URL = "https://OverGroundOfWall.t.me"
 
+@app.get("/health")
+def health():
+    return {"status": "ok"}, 200
 
 @app.route('/', methods=['GET'])
 def health():
