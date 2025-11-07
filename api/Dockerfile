@@ -1,10 +1,11 @@
-# استخدم بايثون الرسمي
 FROM python:3.11-slim
 
-WORKDIR /api
+WORKDIR /app
 
 COPY . .
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r proj/requirements.txt
 
-CMD ["gunicorn", "-b", "0.0.0.0:8080", "index:app"]
+ENV PORT=8080
+
+CMD ["gunicorn", "-b", "0.0.0.0:8080", "proj.app:app"]
